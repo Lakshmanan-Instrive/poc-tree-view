@@ -1,0 +1,86 @@
+/* App.css */
+#root {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+}
+
+.list-container {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.main-list {
+  position: relative;
+}
+
+.category-box {
+  position: relative;
+  padding-left: 20px;
+}
+
+.category-title {
+  position: relative;
+}
+
+.item-box {
+  position: relative;
+  margin-left: 20px;
+  padding-bottom: 20px;
+}
+
+.requirements-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  margin-left: 20px;
+  padding-left: 20px;
+  border-left: 2px solid #d3d3d3; /* Vertical line connecting items */
+}
+
+.requirement-item {
+  display: flex;
+  align-items: center;
+  position: relative;
+  padding-left: 20px;
+}
+
+.requirement-item::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: -20px; /* Adjust for perfect alignment with vertical line */
+  width: 20px;
+  height: 2px;
+  background-color: #d3d3d3; /* Horizontal line connecting items */
+}
+
+.requirement-item.with-line::before {
+  display: block;
+}
+
+.requirement-item:first-child::before {
+  display: none; /* Hide the line for the first item */
+}
+
+.requirement-item::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -20px;
+  bottom: 0;
+  width: 2px;
+  background-color: #d3d3d3; /* Vertical connector for items */
+  z-index: -1;
+}
+
+.requirement-item:first-child::after {
+  top: 50%; /* Start line from the middle for the first item */
+}
+
+.requirement-item:last-child::after {
+  height: 50%; /* End line at the middle for the last item */
+}
